@@ -47,13 +47,20 @@
 
 (eval-after-load 'pyim
   '(progn
+
+     (setq pyim-default-scheme 'xiaohe-shuangpin)
+     (setq pyim-punctuation-translate-p '(auto yes no))
+
+     (define-key pyim-mode-map "," 'pyim-page-previous-page)
+     (define-key pyim-mode-map "." 'pyim-page-next-page)
+
      ;; use memory efficient pyim engine
      (setq pyim-dcache-backend 'pyim-dregcache)
      ;; don's use shortcode2word
      (setq pyim-enable-shortcode nil)
 
      ;; use western punctuation
-     (setq pyim-punctuation-dict nil)
+     ;; (setq pyim-punctuation-dict nil)
      (setq default-input-method "pyim")
 
      ;; automatically load all "*.pyim" under "~/.eim/"
