@@ -208,6 +208,7 @@ If the character before and after CH is space or tab, CH is NOT slash"
 (setq-default evil-escape-delay 0.3)
 (setq evil-escape-excluded-major-modes '(dired-mode))
 (setq-default evil-escape-key-sequence "kj")
+(setq evil-escape-unordered-key-sequence t) ; use both jk and kj for escape
 ;; disable evil-escape when input method is on
 (evil-escape-mode 1)
 ;; }}
@@ -263,7 +264,7 @@ If the character before and after CH is space or tab, CH is NOT slash"
              (xref--xref-buffer-mode . emacs)
              ;;(message-mode . emacs)
              (epa-key-list-mode . emacs)
-             (fundamental-mode . emacs)
+             ;; (fundamental-mode . emacs)
              (weibo-timeline-mode . emacs)
              (weibo-post-mode . emacs)
              (woman-mode . emacs)
@@ -707,9 +708,9 @@ If the character before and after CH is space or tab, CH is NOT slash"
   (if (and (boundp 'wgrep-prepared) wgrep-prepared)
       (wgrep-toggle-readonly-area)))
 
-;; {{ Use `;` as leader key, for searching something
+;; {{ Use `\` as leader key, for searching something
 (general-create-definer my-semicolon-leader-def
-  :prefix ";"
+  :prefix "\\"
   :states '(normal visual))
 
 (my-semicolon-leader-def
@@ -885,6 +886,12 @@ If the character before and after CH is space or tab, CH is NOT slash"
     (switch-to-builtin-shell))
    (t
     (suspend-frame))))
+
+
+;; nmap ; :
+(define-key evil-normal-state-map (kbd ";") 'evil-ex)
+(define-key evil-visual-state-map (kbd ";") 'evil-ex)
+
 
 ;; press ",xx" to expand region
 ;; then press "c" to contract, "x" to expand

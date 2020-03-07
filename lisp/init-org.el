@@ -87,6 +87,13 @@
      (when *emacs26*
        (my-ensure 'org-re-reveal))
 
+     ;; execute code in org mode
+     (org-babel-do-load-languages
+      'org-babel-load-languages
+      '((python . t)
+        (emacs-lisp . t)
+        (js . t)))
+
      ;; odt export
      (add-to-list 'org-export-backends 'odt)
 
