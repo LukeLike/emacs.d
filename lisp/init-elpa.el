@@ -128,15 +128,15 @@
 
         ;; ;; {{ Option 1: 163 mirror repository:
         ;; ;; ("gnu" . "https://mirrors.163.com/elpa/gnu/")
-        ("melpa" . "https://mirrors.163.com/elpa/melpa/")
-        ("melpa-stable" . "https://mirrors.163.com/elpa/melpa-stable/")
+        ;; ("melpa" . "https://mirrors.163.com/elpa/melpa/")
+        ;; ("melpa-stable" . "https://mirrors.163.com/elpa/melpa-stable/")
         ;; ;; }}
 
         ;; ;; {{ Option 2: tsinghua mirror repository
         ;; ;; @see https://mirror.tuna.tsinghua.edu.cn/help/elpa/ on usage:
-        ;; ;; ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ;; ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ;; ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
+        ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
         ;; }}
         ))
 
@@ -352,6 +352,8 @@ PACKAGE is a symbol, VERSION is a vector as produced by `version-to-list', and
 (require-package 'typescript-mode)
 (require-package 'edit-server)
 
+(require-package 'auctex)
+(require-package 'auctex-latexmk)
 ;; {{ Fixed expiring GNU ELPA keys
 ;; GNU ELPA GPG key will expire on Sep-2019. So we need install this package to
 ;; update key or else users can't install packages from GNU ELPA.
