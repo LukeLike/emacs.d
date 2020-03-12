@@ -90,9 +90,10 @@
      ;; execute code in org mode
      (org-babel-do-load-languages
       'org-babel-load-languages
-      '((python . t)
-        (emacs-lisp . t)
-        (js . t)))
+      '((emacs-lisp . t)
+        (js . t)
+        (latex . t)
+        (python . t)))
 
      ;; odt export
      (add-to-list 'org-export-backends 'odt)
@@ -179,10 +180,10 @@ It's value could be customized liked \"/usr/bin/firefox\".
      ;; and you need install texlive-xetex on different platforms
      ;; To install texlive-xetex:
      ;;    `sudo USE="cjk" emerge texlive-xetex` on Gentoo Linux
-     (setq org-latex-pdf-process
-           '("xelatex -interaction nonstopmode -output-directory %o %f"
-             "xelatex -interaction nonstopmode -output-directory %o %f"
-             "xelatex -interaction nonstopmode -output-directory %o %f")) ;; org v8
+     ;; (setq org-latex-pdf-process
+     ;;       '("xelatex -interaction nonstopmode -output-directory %o %f"
+     ;;         "xelatex -interaction nonstopmode -output-directory %o %f"
+     ;;         "xelatex -interaction nonstopmode -output-directory %o %f")) ;; org v8
      ;; }}
 
      ;; misc
