@@ -231,10 +231,10 @@ If the character before and after CH is space or tab, CH is NOT slash"
   "gh" 'outline-up-heading
   "gl" 'outline-next-visible-heading
   "$" 'org-end-of-line ; smarter behaviour on headlines etc.
-  "^" 'org-beginning-of-line ; ditto
-  "<" (lambda () (interactive) (org-demote-or-promote 1)) ; out-dent
-  ">" 'org-demote-or-promote ; indent
-  (kbd "TAB") 'org-cycle)
+  "^" 'org-beginning-of-line) ; ditto
+  ;; "<" (lambda () (interactive) (org-demote-or-promote 1)) ; out-dent
+  ;; ">" 'org-demote-or-promote ; indent
+  ;; (kbd "TAB") 'org-cycle)
 
 (evil-declare-key 'normal markdown-mode-map
   "gh" 'outline-up-heading
@@ -258,7 +258,7 @@ If the character before and after CH is space or tab, CH is NOT slash"
              (neotree-mode . emacs)
              (w3m-mode . emacs)
              (gud-mode . emacs)
-             ;; (help-mode . emacs)
+             (help-mode . emacs)
              (eshell-mode . emacs)
              (shell-mode . emacs)
              (xref--xref-buffer-mode . emacs)

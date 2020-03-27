@@ -41,7 +41,7 @@
   (my-kill-process-buffer-when-exit (nth 0 (ad-get-args 0))))
 
 ;; always use bash
-(defvar my-term-program "/bin/bash")
+(defvar my-term-program "/bin/zsh")
 (defadvice ansi-term (before force-bash)
   (interactive (list my-term-program)))
 (ad-activate 'ansi-term)
